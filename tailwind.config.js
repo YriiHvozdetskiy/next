@@ -6,6 +6,22 @@ module.exports = {
       './src/app/**/*.{js,ts,jsx,tsx,mdx}',
    ],
    theme: {
+      // якщо значення ТУТ то вони дифолтні і значення з tailwind не зможем застосовувати
+      // fontSize: {
+      //    'desk': ['25px', {
+      //       lineHeight: '30px',
+      //    }],
+      //    'mobile': ['15px', {
+      //       lineHeight: '18px',
+      //    }],
+      // },
+      // colors: {
+      //    'primary': '#4d23a4',
+      //    'secondary': 'green'
+      // },
+
+
+      // якщо значення ТУТ то зможем застосовувати знаяення з TAILWIND & КАСТОМНІ
       extend: {
          fontSize: {
             'desk': ['25px', {
@@ -15,6 +31,11 @@ module.exports = {
                lineHeight: '18px',
             }],
          },
+         colors: {
+            'primary': '#4d23a4',
+            'secondary': 'green'
+         },
+
       },
    },
    plugins: [],

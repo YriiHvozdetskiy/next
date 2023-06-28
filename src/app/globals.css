@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*add custom class*/
+
+@layer components {
+   .cart {
+
+      @apply flex items-center justify-center;
+      /*or*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: solid 1px tomato;
+      width: 400px;
+      height: 300px;
+      color: theme('colors.secondary');
+   }
+}
