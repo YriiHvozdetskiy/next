@@ -5,6 +5,8 @@ module.exports = {
       './src/components/**/*.{js,ts,jsx,tsx,mdx}',
       './src/app/**/*.{js,ts,jsx,tsx,mdx}',
    ],
+   mode: 'jit',
+
    theme: {
       // якщо значення ТУТ то вони дифолтні і значення з tailwind не зможем застосовувати
       // fontSize: {
@@ -23,6 +25,9 @@ module.exports = {
 
       // якщо значення ТУТ то зможем застосовувати знаяення з TAILWIND & КАСТОМНІ
       extend: {
+         backgroundImage: {
+            'hero-pattern': "url('../assets/images/cat.png')",
+         },
          fontSize: {
             'desk': ['25px', {
                lineHeight: '30px',
@@ -33,13 +38,17 @@ module.exports = {
          },
          colors: {
             'primary': '#4d23a4',
-            'secondary': 'green'
+            'secondary': 'green',
          },
 
       },
    },
    plugins: [],
 }
+
+//custom values
+//top-[-23px]
+//w-[50%]
 
 // sm	640px	@media (min-width: 640px)
 // md	768px	@media (min-width: 768px)
