@@ -68,3 +68,7 @@
       filter: blur(125px);
    }
 }
+
+main {
+   flex: 1 1 auto;
+}
