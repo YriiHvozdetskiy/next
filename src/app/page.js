@@ -4,8 +4,33 @@ import Image from 'next/image';
 export default function Home() {
    return (
       <main className="flex min-h-screen flex-col items-center justify-between py-24">
-         <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px]'}>
-            {/*TODO space-x-[30px], space-x-2 - заміна gap для flex, задає відступи для дітей(х- зліва) всім крім першого (херово працює з flex-wrap)*/}
+         {/*TODO :after в класі (gradient)*/}
+         <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px] gradient'}>
+            <ul className={'space-y-2 my-2 lg:space-x-2 lg:space-y-0 flex flex-col lg:flex-row'}>
+               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eaque itaque minima minus optio
+                  possimus, quasi quia ullam vel vitae. Ad beatae cumque explicabo illo labore magnam nam rem
+                  repellendus.8
+               </li>
+               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fugit illum inventore nulla possimus
+                  quo quod sunt ullam, veniam? Architecto fuga inventore mollitia nobis omnis qui quibusdam ratione
+                  soluta voluptas.8
+               </li>
+               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, doloribus ea modi nam optio quas
+                  quibusdam. Autem, eius quod? Consectetur dicta dolorem, earum eos esse facere odio sit ut voluptates.8
+               </li>
+               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, cum dignissimos dolorem dolores
+                  enim in ipsa iste non numquam placeat quibusdam reiciendis rem rerum temporibus veniam! Deleniti
+                  dolorem itaque nesciunt.8
+               </li>
+               <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor ducimus esse et eum excepturi
+                  explicabo illum natus, nobis placeat quaerat rerum sed sequi suscipit temporibus ullam vel velit.
+                  Eius?8
+               </li>
+            </ul>
+            <p className={'text-gray-950 hover:opacity-25 transition hidden md:block'}>Lorem ipsum dolor sit amet,
+               consectetur adipisicing elit. A aperiam dignissimos doloribus esse excepturi iusto maxime nostrum quo
+               repellat totam.</p>
+            {/*TODO space-x-[30px], space-x-2(для row) - заміна gap для flex, задає відступи для дітей(х- зліва) всім крім першого (херово працює з flex-wrap). space-y-2(дял col)*/}
             <ul role="list" className="p-6 divide-y divide-slate-200 flex flex-wrap space-x-[10px]">
                <li className="list-item w-2/5">
                   <div className="ml-3 overflow-hidden">
@@ -32,6 +57,9 @@ export default function Home() {
                   </div>
                </li>
             </ul>
+            {/*TODO прозорість /25*/}
+            <p className={'text-lime-600/25'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam
+               dignissimos doloribus esse excepturi iusto maxime nostrum quo repellat totam.</p>
             {/*TODO not(:last-child)*/}
             <div
                className="my-[20px] [&>*:not(:last-child)]:border-b-2 [&>*:not(:last-child)]:border-amber-300 [&>*:not(:last-child)]:border-solid">
@@ -45,7 +73,7 @@ export default function Home() {
                   tailwindcss</p>
             </div>
             {/*TODO :not(тег)]*/}
-            <div className="[&>*:not(p)]:font-bold [&>*:not(p)]:mt-10   ">
+            <div className="[&>*:not(p)]:font-bold [&>*:not(p)]:mt-10">
                <h1>This is heading </h1>
                <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat quis itaque officiis. Repellat nemo
@@ -109,7 +137,9 @@ export default function Home() {
                Lorem ipsum dolor sit amet, consectetur adipisicing
                elit. Natus, neque.
             </p>
-            <div className={"bg-[url('product-1.png')] w-[100px] h-[200px] bg-cover bg-center"}></div>
+            {/*TODO :after*/}
+            <div
+               className={"bg-[url('product-1.png')] w-[100px] h-[200px] bg-cover bg-center relative after:contents after:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 after:blur-[125px] after:w-[300px] after:h-[250px] after:absolute"}></div>
             {/*TODO якщо так писати то в тулзах класи будуть з ... (не буде видно всіх класів/свойств в Firefox) в chrome все буде ок*/}
             <div className={`
                      bg-[url('../assets/images/cat.png')]
@@ -120,6 +150,7 @@ export default function Home() {
                      `}
             >
             </div>
+            {/*TODO :after*/}
             <label className="block">
                <span
                   className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
