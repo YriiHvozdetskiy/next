@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/*add custom class*/
+:root {
+   --primary-text-color: #07376E;
+   --light-color: #ffffff;
+   --dark-color: #000000;
+   --accent-color: #B1362F;
+}
+
+/*TODO @layer - понижає спицефічність стилів, щоб їх можна переобриділити */
 @layer components {
+   /*TODO add custom class*/
+
    .cart {
       @apply flex items-center justify-center;
       /*or*/
@@ -29,13 +38,20 @@
       @apply text-center text-primary text-mobile hover:text-red-300 transition;
    }
 
-   /*звертаємося від батька до певної дитини v1*/
+   /*TODO звертаємося від батька до певної дитини v1*/
    .parent > .children {
       font-size: 20px;
    }
-   /*звертаємося від батька до певної дитини v2*/
+   /*TODO звертаємося від батька до певної дитини v2*/
    .parent > span {
       font-size: 40px;
    }
-}
 
+   .active {
+      color: red;
+   }
+
+   .list-item {
+      @apply flex py-4 first:pt-0 last:pb-0
+   }
+}
