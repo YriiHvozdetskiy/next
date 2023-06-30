@@ -36,10 +36,14 @@ module.exports = {
             }],
          },
          colors: {
-            'primary': '#4d23a4',
-            'secondary': 'green',
+            primary: '#4d23a4',
+            secondary: 'green',
          },
-
+         fontFamily: {
+            main: ['var(--font-montserrat)'],
+            secondary: ['var(--font-inter)'],
+            days: ['var(--font-days-one)'],
+         }
       },
    },
    plugins: [],
@@ -63,4 +67,3 @@ module.exports = {
 // lg	1024px @media (min-width: 1024px)
 // xl	1280px @media (min-width: 1280px)
 // 2xl 1536px @media (min-width: 1536px)
-

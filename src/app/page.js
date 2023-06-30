@@ -33,7 +33,16 @@ export default function Home() {
                      Eius?8
                   </li>
                </ul>
-               <p className={'text-gray-950 hover:opacity-25 transition hidden md:block'}>Lorem ipsum dolor sit amet,
+               {/*TODO --font-montserrat*/}
+               <p className={'text-yellow-700 hidden md:block font-main'}>Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. A aperiam dignissimos doloribus esse excepturi iusto maxime nostrum quo
+                  repellat totam.</p>
+               {/*TODO --font-inter*/}
+               <p className={'text-green-600 hidden md:block font-secondary'}>Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. A aperiam dignissimos doloribus esse excepturi iusto maxime nostrum quo
+                  repellat totam.</p>
+               {/*TODO --font-days-one*/}
+               <p className={'text-blue-400 hidden md:block font-days'}>Lorem ipsum dolor sit amet,
                   consectetur adipisicing elit. A aperiam dignissimos doloribus esse excepturi iusto maxime nostrum quo
                   repellat totam.</p>
                {/*TODO space-x-[30px], space-x-2(для row) - заміна gap для flex, задає відступи для дітей(х- зліва) всім крім першого (херово працює з flex-wrap). space-y-2(дял col)*/}
