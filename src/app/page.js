@@ -15,7 +15,7 @@ export default function Home() {
                <span className={'w-5 h-5 bg-amber-300 group-hover:animate-spin transition block'}></span>
             </button>
             {/*TODO :after в класі (gradient)*/}
-            <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px] gradient'}>
+            <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px] gradient '}>
                <p className={'pt-2 flex py-0 mb-0.5 flex-auto flex-col sm:flex-row'}>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, ratione?
                </p>
@@ -130,7 +130,7 @@ export default function Home() {
                      culpa cupiditate qui tempore quidem. Ipsum.
                   </p>
                </div>
-               <div className={'container flex flex-col items-center justify-center gap-[20px] w-2/4'}>
+               <div className={'container flex flex-col items-center justify-center gap-[20px]'}>
                   <h1 className={'text-4xl font-bold text-center'}>
                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   </h1>

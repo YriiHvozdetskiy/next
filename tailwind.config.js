@@ -24,6 +24,10 @@ module.exports = {
 
       // якщо значення ТУТ то зможем застосовувати знаяення з TAILWIND & КАСТОМНІ
       extend: {
+         // TODO завжди центруємо клас "container" (width: 100%; margin-right: auto; margin-left: auto;) і автоматом дод @media max-width: 1024px; і тд
+         container: {
+            center: true,
+         },
          fontSize: {
             'desk': ['25px', {
                lineHeight: '30px',
