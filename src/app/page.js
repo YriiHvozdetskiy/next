@@ -15,7 +15,41 @@ export default function Home() {
                <span className={'w-5 h-5 bg-amber-300 group-hover:animate-spin transition block'}></span>
             </button>
             {/*TODO :after в класі (gradient)*/}
-            <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px] gradient '}>
+            <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px] gradient'}>
+               {/*TODO завжди буде columns-n колонки*/}
+               <ul className={'columns-3 mb-16'}>
+                  <li>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eaque itaque minima
+                     minus optio possimus, quasi quia ullam vel vitae. Ad beatae cumque explicabo illo labore
+                     magnam nam rem repellendus.8
+                  </li>
+                  <li>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fugit illum inventore nulla
+                     possimus quo quod sunt ullam, veniam? Architecto fuga inventore mollitia nobis omnis qui
+                     quibusdam ratione soluta voluptas.8
+                  </li>
+                  <li>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, doloribus ea modi nam
+                     optio quas quibusdam. Autem, eius quod? Consectetur dicta dolorem, earum eos esse facere
+                     odio sit ut voluptates.8
+                  </li>
+                  <li>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, cum dignissimos
+                     dolorem dolores enim in ipsa iste non numquam placeat quibusdam reiciendis rem rerum
+                     temporibus veniam! Deleniti dolorem itaque nesciunt.8
+                  </li>
+                  <li>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor ducimus esse et eum
+                     excepturi explicabo illum natus, nobis placeat quaerat rerum sed sequi suscipit temporibus
+                     ullam vel velit. Eius?8
+                  </li>
+               </ul>
+               {/*TODO divide-y, divide-x - задасть бордер всім дітям крім останього*/}
+               <div className="grid grid-cols-3 divide-x text-center">
+                  <div>01</div>
+                  <div>02</div>
+                  <div>03</div>
+               </div>
                <p className={'pt-2 flex py-0 mb-0.5 flex-auto flex-col sm:flex-row'}>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, ratione?
                </p>
