@@ -5,8 +5,14 @@ export default function Home() {
    return (
       <>
          <main className="flex flex-col items-center justify-between py-24">
+            {/*TODO group-hover:rotate-45, group - при наведені на кнопку ховер спрацбовує на дитині*/}
+            <button className={'group bg-white text-sky-400 p-2 transition flex gap-2 border border-solid border-cyan-300 rounded'}>
+               <span>button</span>
+               <span className={'w-5 h-5 bg-amber-300 group-hover:rotate-45 transition block'}></span>
+            </button>
             {/*TODO :after в класі (gradient)*/}
             <section className={'bg-gray-300 max-w-[1430px] w-full px-[15px] gradient'}>
+
                <ul className={'space-y-2 my-2 lg:space-x-2 lg:space-y-0 flex flex-col lg:flex-row'}>
                   <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eaque itaque minima minus
                      optio
