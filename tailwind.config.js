@@ -24,9 +24,6 @@ module.exports = {
 
       // якщо значення ТУТ то зможем застосовувати знаяення з TAILWIND & КАСТОМНІ
       extend: {
-         backgroundImage: {
-            'hero-pattern': "url('../assets/images/cat.png')",
-         },
          fontSize: {
             'desk': ['25px', {
                lineHeight: '30px',
