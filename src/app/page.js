@@ -9,6 +9,8 @@ export default function Home() {
             {/*TODO twMerge - стилізую кнопку задаючи стилі при обявлені*/}
             <SubscribeButton className={'text-white mb-3 uppercase'}/>
             <SubscribeButton className={'text-blue-800 uppercase bg-white border-solid border-cyan-400 border'}/>
+            {/*TODO twMerge можем передавати класи (головне щоб клас не був в @layer)*/}
+            <SubscribeButton className={'button-active'}/>
             {/*TODO group-hover:rotate-45, group - при наведені на кнопку ховер спрацбовує на дитині в якої group-hover*/}
             <button
                className={'group md:bg-white text-sky-400 p-2 transition flex gap-2 border border-solid border-cyan-300 rounded active:bg-amber-100 bg-amber-300'}
