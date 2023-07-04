@@ -1,15 +1,17 @@
 import cat from '@/assets/images/cat.png';
 import Image from 'next/image';
+import {SubscribeButton} from '@/components/SubscribeButton';
 
 export default function Home() {
    return (
       <>
          <main className="flex flex-col items-center justify-between py-24">
+            {/*TODO twMerge - стилізую кнопку задаючи стилі при обявлені*/}
+            <SubscribeButton className={'text-white mb-3 uppercase'}/>
+            <SubscribeButton className={'text-blue-800 uppercase bg-white border-solid border-cyan-400 border'}/>
             {/*TODO group-hover:rotate-45, group - при наведені на кнопку ховер спрацбовує на дитині в якої group-hover*/}
             <button
-               className={
-                  'group md:bg-white text-sky-400 p-2 transition flex gap-2 border border-solid border-cyan-300 rounded active:bg-amber-100 bg-amber-300'
-               }
+               className={'group md:bg-white text-sky-400 p-2 transition flex gap-2 border border-solid border-cyan-300 rounded active:bg-amber-100 bg-amber-300'}
             >
                <span>button</span>
                <span className={'w-5 h-5 bg-amber-300 group-hover:animate-spin transition block'}></span>
@@ -17,19 +19,15 @@ export default function Home() {
             {/*TODO задаєм group/name по якому буде працювати ховер*/}
             <div className={'flex group/button'}>
                <button className={'bg-green-400 group-hover/button:bg-orange-500 transition'}>
-                  {' '}
                   with group-hover/name
                </button>
                <button className={'bg-green-400 group-hover:bg-violet-500 transition'}>
-                  {' '}
                   without group-hover/name
                </button>
             </div>
             {/*TODO disabled hover*/}
             <button
-               className={
-                  'px-2 py-2 rounded-lg  bg-sky-400 transition hover:opacity-80 disabled:bg-sky-400 hover:disabled:opacity-100'
-               }
+               className={'px-2 py-2 rounded-lg  bg-sky-400 transition hover:opacity-80 disabled:bg-sky-400 hover:disabled:opacity-100'}
                disabled
             >
                button disabled
