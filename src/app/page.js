@@ -1,11 +1,37 @@
+'use client'
+
 import cat from '@/assets/images/cat.png';
 import Image from 'next/image';
 import {SubscribeButton} from '@/components/SubscribeButton';
+import {Button, buttonVariants} from '@/components/Button';
+import Link from 'next/link';
 
 export default function Home() {
    return (
       <>
          <main className="flex flex-col items-center justify-between py-24">
+            {/*TODO можем використовувати стилі з компоненти Button, buttonVariants*/}
+            <Link
+               href={'/'}
+               className={buttonVariants({variant: 'ghost', size: 'sm'})}
+            >
+               Link buttonVariants
+            </Link>
+            {/*TODO продвинутий варіант створення кнопки з готовими стилями + можем додавати свої при визові кнопки*/}
+            <Button
+               size={'lg'}
+               variant={'subtle'}
+               className={'w-full'} // додаткова стилізація через className
+               onClick={() => console.log('click')}
+               aria-label='upvote' // передаєм aria-label
+            >
+               Button buttonVariants
+            </Button>
+            <Button
+               isLoading={true}
+            >
+               Button buttonVariants isLoading
+            </Button>
             {/*TODO twMerge - стилізую кнопку задаючи стилі при обявлені*/}
             <SubscribeButton className={'text-white mb-3 uppercase'}/>
             <SubscribeButton className={'text-blue-800 uppercase bg-white border-solid border-cyan-400 border'}/>

@@ -1,7 +1,9 @@
 import {cn} from '@/lib/utils'
 import {cva} from 'class-variance-authority'
-import {Loader2} from 'lucide-react'
+import {Loader2} from 'lucide-react' // ліба з іконками
+
 // https://ui.shadcn.com/docs/components/button
+// https://www.youtube.com/watch?v=eXRlVpw1SIQ&t=58s
 
 const buttonVariants = cva(
    'active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900',
@@ -33,14 +35,15 @@ const buttonVariants = cva(
    }
 )
 
-const Button = (({className, children, variant, isLoading, size, ...props}, ref) => {
+const Button = (({className, variant, size, children, isLoading, ...props}, ref) => {
 
       return (
          <button
             className={cn(buttonVariants({variant, size, className}))}
-            ref={ref}
+            // ref={ref}
             disabled={isLoading}
-            {...props}>
+            {...props}
+         >
             {isLoading ? <Loader2 className='mr-2 h-4 w-4 animate-spin'/> : null}
             {children}
          </button>
