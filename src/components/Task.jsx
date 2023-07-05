@@ -1,10 +1,18 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
+import {useStore} from '@/zustand/store';
 
-const STATUS = 'Planned'
 export const Task = ({title}) => {
-   const [color, setColor] = useState('green');
+   const [color, setColor] = useState('gray');
+   const task = useStore(store => store.tasks.find(task => task.title === title))
 
    const possible = ['bg-gray-400', 'bg-green-400', 'bg-red-400']
+
+
+   useEffect(() => {
+      if (task.state === 'Planned') setColor('gray')
+      if (task.state === 'Ongoing') setColor('red')
+      if (task.state === 'Done') setColor('green')
+   }, []);
 
    return (
       <>
@@ -14,7 +22,7 @@ export const Task = ({title}) => {
             {title}
             <div className={'flex justify-between'}>
                <div></div>
-               <div className={`text-sm p-1 bg-${color}-400 rounded`}>{STATUS}</div>
+               <div className={`text-sm p-1 bg-${color}-400 rounded`}>{task.state}</div>
             </div>
          </div>
       </>
