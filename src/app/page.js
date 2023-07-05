@@ -5,11 +5,17 @@ import Image from 'next/image';
 import {SubscribeButton} from '@/components/SubscribeButton';
 import {Button, buttonVariants} from '@/components/Button';
 import Link from 'next/link';
+import {Column} from '@/components/Column';
 
 export default function Home() {
    return (
       <>
          <main className="flex flex-col items-center justify-between py-24">
+            <section className={'container flex justify-center space-x-3'}>
+               <Column state={'Planned'}/>
+               <Column state={'Ongoing'}/>
+               <Column state={'Done'}/>
+            </section>
             {/*TODO можем використовувати стилі з компоненти Button, buttonVariants*/}
             <Link
                href={'/'}

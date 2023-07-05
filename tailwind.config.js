@@ -63,6 +63,9 @@ module.exports = {
 //TODO :not(тег)
 //[&>*:not(p)]:властивість - ЗАДАЄТЬСЯ БАТЬКУ для ТЕГІВ
 
+//TODO space-x
+//space-x-[10px] - заміна gap для flex, задає відступи для дітей(х- зліва) всім крім першого (херово працює з flex-wrap). space-y-2(дял col)
+
 // sm	640px	@media (min-width: 640px)
 // md	768px	@media (min-width: 768px)
 // lg	1024px @media (min-width: 1024px)
