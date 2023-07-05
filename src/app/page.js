@@ -267,7 +267,7 @@ export default function Home() {
                {/*TODO :after*/}
                <div
                   className={
-                     "bg-[url('product-1.png')] w-[100px] h-[200px] bg-cover bg-center relative after:contents after:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 after:blur-[125px] after:w-[300px] after:h-[250px] after:absolute"
+                     "w-[100px] h-[200px] bg-cover bg-center relative after:contents after:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 after:blur-[125px] after:w-[300px] after:h-[250px] after:absolute"
                   }
                ></div>
                {/*TODO якщо так писати то в тулзах класи будуть з ... (не буде видно всіх класів/свойств в Firefox) в chrome все буде ок*/}

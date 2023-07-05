@@ -1,4 +1,4 @@
-import './globals.css'
+import '@/styles/globals.css'
 import {Inter, Montserrat, Days_One} from 'next/font/google'
 
 const inter = Inter({
