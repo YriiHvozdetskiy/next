@@ -17,3 +17,10 @@ export const selectTasks = ({state}) => {
       shallow
    )
 }
+//doc
+const Component = () => {
+   const count = useCountStore((state) => state.count)
+   const increment = useCountStore((state) => state.increment)
+   const decrement = useCountStore((state) => state.decrement)
+   // ...
+}

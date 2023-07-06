@@ -5,8 +5,6 @@ module.exports = {
       './src/components/**/*.{js,ts,jsx,tsx,mdx}',
       './src/app/**/*.{js,ts,jsx,tsx,mdx}',
    ],
-   mode: 'jit',
-
    theme: {
       // якщо значення ТУТ то вони дифолтні і значення з tailwind не зможем застосовувати
       // fontSize: {
