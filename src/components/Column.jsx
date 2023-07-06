@@ -20,22 +20,20 @@ export const Column = ({state}) => {
    //    shallow
    // )
 
-   const openModalHandler = () => {
-      setOpen(true)
-      // input.current.focus()
-      // TODO не працює ref
-      console.log('input.current', input.current)
-   };
-
    return (
       <div className={'max-w-[20rem] w-1/3 px-3 rounded-md py-2 bg-gray-950 text-white min-h-[20rem] space-y-2'}
       >
          <div className={'flex justify-between'}>
-            <p>{state}</p>
+            <p>
+               {state}</p>
             <button
                type={'button'}
                className={'text-black bg-white p-1 rounded-sm'}
-               onClick={openModalHandler}
+               onClick={() => {
+                  setOpen(true)
+                  // TODO не працює ref коли елемента немає в DOM
+                  console.log('input.current', input.current) // null
+               }}
             >
                Add
             </button>

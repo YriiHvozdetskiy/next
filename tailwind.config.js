@@ -20,6 +20,17 @@ module.exports = {
       //    'secondary': 'green'
       // },
 
+      // screens: {
+      //    'tablet': '640px',
+      //    // => @media (min-width: 640px) { ... }
+      //
+      //    'laptop': '1024px',
+      //    // => @media (min-width: 1024px) { ... }
+      //
+      //    'desktop': '1280px',
+      //    // => @media (min-width: 1280px) { ... }
+      // },
+
       // якщо значення ТУТ то зможем застосовувати знаяення з TAILWIND & КАСТОМНІ
       extend: {
          // TODO завжди центруємо клас "container" (width: 100%; margin-right: auto; margin-left: auto;) і автоматом дод @media max-width: 1024px; і тд
@@ -63,6 +74,10 @@ module.exports = {
 
 //TODO space-x
 //space-x-[10px] - заміна gap для flex, задає відступи для дітей(х- зліва) всім крім першого (херово працює з flex-wrap). space-y-2(дял col)
+
+//TODO max-* sm, md, lg etc - стилі будуть примінятися ДО відповідного @media
+//@media screen and (max-width)
+
 
 // sm	640px	@media (min-width: 640px)
 // md	768px	@media (min-width: 768px)
