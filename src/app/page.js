@@ -6,7 +6,15 @@ import {SubscribeButton} from '@/components/SubscribeButton';
 import {Button, buttonVariants} from '@/components/Button';
 import Link from 'next/link';
 import {Column} from '@/components/Column';
+// import {Count} from '@/components/Count';
+import dynamic from 'next/dynamic';
 
+const Count = dynamic(
+   () => import('../components/Count'),
+   { ssr: false }
+)
+
+// const Count = dynamic(() => import('../components/Count'))
 export default function Home() {
    return (
       <>
@@ -16,6 +24,7 @@ export default function Home() {
                <Column state={'Ongoing'}/>
                <Column state={'Done'}/>
             </section>
+            <Count/>
             {/*TODO можем використовувати стилі з компоненти Button, buttonVariants*/}
             <Link
                href={'/'}

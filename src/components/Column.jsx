@@ -41,10 +41,10 @@ export const Column = ({state}) => {
          {tasks.map((task, index) => (
             <Task title={task.title} key={index}/>
          ))}
-         {/*TODO background - для модалки*/}
+         {/*TODO background - для модалки == rgba*/}
          {open &&
-            <div className={'absolute bg-black bg-opacity-30 w-full h-full top-0 left-0'}>
-               <div
+            <div className={'absolute bg-black bg-opacity-70 w-full h-full top-0 left-0'}>
+               <form
                   className={'p-12 flex flex-col items-center space-y-2 bg-white absolute z-[1] transform top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'}>
                   <input
                      className={'text-black border-solid border-cyan-600 border rounded-sm'}
@@ -63,7 +63,7 @@ export const Column = ({state}) => {
                   >
                      Submit
                   </button>
-               </div>
+               </form>
             </div>
          }
       </div>
