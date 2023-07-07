@@ -1,3 +1,5 @@
+'use client'
+
 import {useMutation, useQuery} from '@tanstack/react-query';
 import axios from 'axios';
 import {usePosts} from '@/store';
@@ -7,7 +9,7 @@ export const Posts = () => {
    const {setIsLoading} = usePosts()
 
    // const {} = usePost(1,'post')
-
+   //TODO useQuery
    const {data} = useQuery({
       queryKey: ['post'],
       queryFn: async () => {

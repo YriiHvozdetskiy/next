@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import {Inter, Montserrat, Days_One} from 'next/font/google'
-import {Providers} from '@/utils';
+import {Header} from '@/components/Header';
+import {Providers} from '@/components/Providers';
 
 const inter = Inter({
    subsets: ['latin'],
@@ -33,7 +34,14 @@ export default function RootLayout({children}) {
       <Providers>
          <body
             className={`${inter.variable} ${montserrat.variable} ${daysOne.variable} font-sans  flex flex-col h-full`}>
-         {children}
+         <Header
+            className={'bg-violet-500'} // додаткова стилізація через className (потірбно додати ф-цію 'cn')
+         />
+         <main className="flex flex-col items-center justify-between py-24">
+            <div className={'container'}>
+               {children}
+            </div>
+         </main>
          </body>
       </Providers>
       </html>

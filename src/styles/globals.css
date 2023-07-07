@@ -9,6 +9,11 @@
    --accent-color: #B1362F;
 }
 
+html,
+body {
+   scrollbar-gutter: stable;
+}
+
 main {
    flex: 1 1 auto;
 }
