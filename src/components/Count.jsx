@@ -1,6 +1,6 @@
-import {useCounter} from '@/zustand/store';
 import {shallow} from 'zustand/shallow';
 import {useGetStore} from '@/hooks';
+import {useCounter} from '@/store';
 
 const Count = () => {
    //TODO щоб записувати/читати дані в sessionStorage,localStorage і не було помилки при запису/читані даних,

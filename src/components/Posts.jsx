@@ -1,6 +1,6 @@
-import {usePosts} from '@/zustand/store';
 import {useMutation, useQuery} from '@tanstack/react-query';
 import axios from 'axios';
+import {usePosts} from '@/store';
 
 export const Posts = () => {
 
