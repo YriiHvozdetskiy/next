@@ -6,15 +6,16 @@ import {SubscribeButton} from '@/components/SubscribeButton';
 import {Button, buttonVariants} from '@/components/Button';
 import Link from 'next/link';
 import {Column} from '@/components/Column';
-// import {Count} from '@/components/Count';
+import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
 
-const Count = dynamic(
-   () => import('../components/Count'),
-   { ssr: false }
-)
+// const Count = dynamic(
+//    () => import('../components/Count'),
+//    // даже коли компонента 'use client' вона все рівно рендериться на сервері,
+//    //ssr: false - вимикає рендер компонента 'use client' на сервері
+//    { ssr: false }
+// )
 
-// const Count = dynamic(() => import('../components/Count'))
 export default function Home() {
    return (
       <>
