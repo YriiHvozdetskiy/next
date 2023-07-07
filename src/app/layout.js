@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import {Inter, Montserrat, Days_One} from 'next/font/google'
+import {Providers} from '@/utils';
 
 const inter = Inter({
    subsets: ['latin'],
@@ -29,9 +30,12 @@ export const metadata = {
 export default function RootLayout({children}) {
    return (
       <html lang="en" className={'h-full'}>
-      <body className={`${inter.variable} ${montserrat.variable} ${daysOne.variable} font-sans  flex flex-col h-full`}>
-      {children}
-      </body>
+      <Providers>
+         <body
+            className={`${inter.variable} ${montserrat.variable} ${daysOne.variable} font-sans  flex flex-col h-full`}>
+         {children}
+         </body>
+      </Providers>
       </html>
    )
 }

@@ -25,6 +25,19 @@ export const useCounter = create(
       }
    ))
 
+export const usePosts = create(
+   persist(set => ({
+         posts: [],
+         isLoading: false,
+         setIsLoading: (isLoading) => set({isLoading})
+      }),
+      {
+         name: 'posts',
+         // storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+      }
+   )
+)
+
 // const useBoundStore = create((set) => ({
 //    storeSliceA: ...,
 //    storeSliceB: ...,

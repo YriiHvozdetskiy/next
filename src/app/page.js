@@ -8,6 +8,7 @@ import Link from 'next/link';
 import {Column} from '@/components/Column';
 import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
+import {Posts} from '@/components/Posts';
 
 // const Count = dynamic(
 //    () => import('../components/Count'),
@@ -16,7 +17,7 @@ import dynamic from 'next/dynamic';
 //    { ssr: false }
 // )
 
-export default function Home() {
+export default function HomePage() {
    return (
       <>
          <main className="flex flex-col items-center justify-between py-24">
@@ -26,6 +27,7 @@ export default function Home() {
                <Column state={'Done'}/>
             </section>
             <Count/>
+            <Posts/>
             {/*TODO можем використовувати стилі з компоненти Button, buttonVariants*/}
             <Link
                href={'/'}
