@@ -7,4 +7,8 @@ export const navLinks = [
       href: '/posts',
       name: 'Posts'
    },
+   {
+      href: '/shadcn-ui',
+      name: 'shadcn-ui'
+   },
 ]

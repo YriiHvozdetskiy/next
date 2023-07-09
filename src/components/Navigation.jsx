@@ -16,7 +16,7 @@ export const Navigation = () => {
                return (
                   <li key={link.name}>
                      <Link
-                        className={`${isCurrent ? 'text-sky-600 border-sky-600' : 'text-black border-black'} hover:text-sky-600 px-6 inline-block py-3 border-2 border-solid rounded-lg`}
+                        className={`${isCurrent ? 'text-sky-600 border-sky-600' : 'text-black border-black'} font-main hover:text-sky-600 px-6 inline-block py-3 border-2 border-solid rounded-lg`}
                         href={link.href}
                      >
                         {link.name}

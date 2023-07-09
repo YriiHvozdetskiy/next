@@ -27,7 +27,7 @@ const Count = () => {
    const count = useGetStore(useCounter, state => state.count)
 
    return (
-      <>
+      <div className={'flex flex-col items-center space-y-4'}>
          <div>{count ? count : 0}</div>
          <button className={'border border-solid border-amber-300 rounded-lg p-1'}
                  onClick={() => increaseCount(1)}>increase
@@ -35,7 +35,7 @@ const Count = () => {
          <button className={'border border-solid border-amber-300 rounded-lg p-1'}
                  onClick={() => decreaseCount(1)}>decrease
          </button>
-      </>
+      </div>
    );
 };
 
