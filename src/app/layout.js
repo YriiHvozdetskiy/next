@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/custom.css'
 import {Inter, Montserrat, Days_One} from 'next/font/google'
 import {Header} from '@/components/Header';
 import {Providers} from '@/components/Providers';

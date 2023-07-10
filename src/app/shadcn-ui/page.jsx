@@ -8,7 +8,7 @@ export default function ShadcnUiPage() {
          shadcn-ui
          <Calendar
             mode="single"
-            className="rounded-md border font-main"
+            className="rounded-md border font-main calendar-button"
          />
          <Accordion type={'single'} collapsible>
             <AccordionItem value="item-1">

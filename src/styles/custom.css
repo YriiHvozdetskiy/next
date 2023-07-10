@@ -1,0 +1,11 @@
+.calendar-button button {
+   @apply text-lg
+}
+
+.calendar-button button.bg-accent {
+   @apply bg-yellow-200
+}
+
+.calendar-button button:hover {
+   @apply bg-amber-100
+}
