@@ -6,16 +6,16 @@ import {usePosts} from '@/store';
 import {Card} from '@/components/Card';
 import {wait} from '@/utils';
 
-export const Posts = () => {
+export const MyPosts = () => {
    const queryClient = useQueryClient()
    const {setIsLoading} = usePosts()
 
    // const {} = usePost(1,'post')
    //TODO з useQuery можна не використовувати useEffect для запиту при монтувані і useState для запису даних в стейт, дані будуть в "data" і кожний раз актуальні(коли з вкаладки пропаде фокус і тд)
    const {data} = useQuery({
-      queryKey: ['posts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['posts'], useQuery візьме дані з кешу і не буде робити ще один fetch
+      queryKey: ['MyPosts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['MyPosts'], useQuery візьме дані з кешу і не буде робити ще один fetch
       queryFn: async (obj) => {
-         console.log('obj', obj)
+         console.log('queryFn arg', obj)
          setIsLoading(true)
          const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=2`)
 
@@ -45,7 +45,7 @@ export const Posts = () => {
          return data
       },
       onSuccess: () => {
-         queryClient.invalidateQueries(['posts']) // після успішної зміни даних (addPost), оновлюєм на клієнті їх через ключ ['posts']
+         queryClient.invalidateQueries(['MyPosts']) // після успішної зміни даних (addPost), оновлюєм на клієнті їх через ключ ['MyPosts']
       }
    })
 

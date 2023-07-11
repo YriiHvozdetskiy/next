@@ -4,7 +4,7 @@ import axios from 'axios';
 export const Card = () => {
 
    // const {data} = useQuery({
-   //    queryKey: ['posts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['posts'], useQuery візьме дані з кешу і не буде робити ще один fetch
+   //    queryKey: ['CardPosts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['CardPosts'], useQuery візьме дані з кешу і не буде робити ще один fetch
    //    queryFn: async () => {
    //       const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts/1`)
    //
