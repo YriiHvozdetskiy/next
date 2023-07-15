@@ -2,6 +2,7 @@
 
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
 import axios from 'axios';
+
 import {usePosts} from '@/store';
 import {Card} from '@/components/Card';
 import {wait} from '@/utils';
@@ -14,6 +15,10 @@ export const MyPosts = () => {
    //TODO з useQuery можна не використовувати useEffect для запиту при монтувані і useState для запису даних в стейт, дані будуть в "data" і кожний раз актуальні(коли з вкаладки пропаде фокус і тд)
    const {data} = useQuery({
       queryKey: ['MyPosts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['MyPosts'], useQuery візьме дані з кешу і не буде робити ще один fetch
+
+      // при пагінації зберігає старі дані поки не прийдуть нові дані з сервера
+      keepPreviousData: true,
+
       queryFn: async (obj) => {
          console.log('queryFn arg', obj)
          setIsLoading(true)

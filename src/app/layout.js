@@ -1,6 +1,7 @@
+import {Inter, Montserrat, Days_One} from 'next/font/google'
+
 import '@/styles/globals.css'
 import '@/styles/custom.css'
-import {Inter, Montserrat, Days_One} from 'next/font/google'
 import {Header} from '@/components/Header';
 import {Providers} from '@/components/Providers';
 
@@ -40,6 +41,8 @@ export default function RootLayout({children}) {
          />
          <main className="flex flex-col items-center justify-between py-24">
             <div className={'container'}>
+               {/*TODO layout вкладені один в одний. MyPostLayout вложений в RootLayout*/}
+               is RootLayout
                {children}
             </div>
          </main>
