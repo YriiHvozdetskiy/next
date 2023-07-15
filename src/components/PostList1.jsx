@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 
 import {getPost, getPosts} from '@/fetch';
 // https://youtu.be/r8Dg0KVnfMA
+// https://github.com/WebDevSimplified/react-query-crash-course-example/tree/main
 
 export default function PostsList1() {
    const queryClient = useQueryClient()
