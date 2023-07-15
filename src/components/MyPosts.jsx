@@ -6,6 +6,7 @@ import axios from 'axios';
 import {usePosts} from '@/store';
 import {Card} from '@/components/Card';
 import {wait} from '@/utils';
+import {getMyPosts} from '@/fetch';
 
 export const MyPosts = () => {
    const queryClient = useQueryClient()
@@ -17,22 +18,28 @@ export const MyPosts = () => {
       queryKey: ['MyPosts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['MyPosts'], useQuery візьме дані з кешу і не буде робити ще один fetch
 
       // при пагінації зберігає старі дані поки не прийдуть нові дані з сервера
-      keepPreviousData: true,
+      // keepPreviousData: true,
 
-      queryFn: async (obj) => {
-         console.log('queryFn arg', obj)
-         setIsLoading(true)
-         const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=2`)
+      // скорочення
+      queryFn:  getMyPosts,
 
-         return data
-      },
+      // з api/route
+      // queryFn: () => getMyPosts('api/my-posts'),
+
+      // queryFn: async (obj) => {
+      //    console.log('queryFn arg', obj)
+      //    setIsLoading(true)
+      //    const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=2`)
+      //
+      //    return data
+      // },
       onSuccess: (data) => {
       },
       onError: () => {
       },
       //like a finally
       onSettled: () => {
-         setIsLoading(false)
+         // setIsLoading(false)
       },
    })
 
@@ -56,7 +63,14 @@ export const MyPosts = () => {
 
    return (
       <div>
-         <p>{JSON.stringify(data)}</p>
+         {data && data?.map(post => (
+            <div key={post.title}>
+               <span>title: {post?.title}</span>
+               <br/>
+               <span>body: {post?.body}</span>
+            </div>
+         ))}
+         {/*<p>{JSON.stringify(data)}</p>*/}
          <button
             onClick={() => {
                addPost()
