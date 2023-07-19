@@ -4,7 +4,7 @@ import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
 import axios from 'axios';
 
 import {usePosts} from '@/store';
-import {Card} from '@/components/Card';
+import Card from '@/components/Card';
 import {wait} from '@/utils';
 import {getMyPosts} from '@/fetch';
 
@@ -21,7 +21,7 @@ export const MyPosts = () => {
       // keepPreviousData: true,
 
       // скорочення
-      queryFn:  getMyPosts,
+      queryFn: getMyPosts,
 
       // з api/route
       // queryFn: () => getMyPosts('api/my-posts'),

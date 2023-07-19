@@ -1,7 +1,7 @@
 import {useQuery} from '@tanstack/react-query';
 import axios from 'axios';
 
-export const Card = () => {
+const Card = () => {
 
    // const {data} = useQuery({
    //    queryKey: ['CardPosts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['CardPosts'], useQuery візьме дані з кешу і не буде робити ще один fetch
@@ -19,3 +19,5 @@ export const Card = () => {
       </div>
    );
 };
+
+export default Card
