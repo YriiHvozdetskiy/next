@@ -8,6 +8,7 @@ import Link from 'next/link';
 import {Column} from '@/components/Column';
 import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
+import {Modal} from '@/components/Modal';
 
 // const Count = dynamic(
 //    () => import('../components/Count'),
@@ -17,6 +18,7 @@ import dynamic from 'next/dynamic';
 // )
 
 export default function HomePage() {
+
    return (
       <>
          <section className={'container flex justify-center space-x-3'}>
@@ -24,6 +26,22 @@ export default function HomePage() {
             <Column state={'Ongoing'}/>
             <Column state={'Done'}/>
          </section>
+         <Modal
+            title={'Are you sure absolutely?'}
+            description={'This action cannot be undone. This will permanently delete your account and remove your data from our servers.'}
+            trigger={'Open modal 1'}
+         >
+            <p>content modal 1</p>
+         </Modal>
+         <br/>
+         <Modal
+            className={'bg-zinc-900 text-zinc-100 hover:bg-zinc-800 mt-2'}
+            title={'Are you absolutely?'}
+            description={'This action cannot be undone. This will permanently delete your account and remove your data from our servers.'}
+            trigger={'Open modal 2'}
+         >
+            <p>content modal 2</p>
+         </Modal>
          <Count/>
          {/*TODO можем використовувати стилі з компоненти Button, buttonVariants*/}
          <Link
