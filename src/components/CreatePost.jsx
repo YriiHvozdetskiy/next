@@ -9,11 +9,21 @@ export const CreatePost = () => {
    const queryClient = useQueryClient()
 
    const createPostMutation = useMutation({
-      mutationFn: createPost, // автоматично визивається ф-ція в яку передаються параметри з handleSubmit
+      mutationFn: createPost, // автоматично визивається ф-ція в яку передаються параметри з handleSubmit(createPostMutation.mutate)
       //retry:3, // буде три спроби щось зробити
 
       // визветься раніше за mutationFn
-      onMutate: () => {
+      onMutate: (variables) => {
+         // Викликається перед початком мутації
+
+
+         // Оновлення локального кешу з новими даними перед відправкою даних на сервер
+         // queryClient.setQueryData(['posts'], variables);
+
+         // Тут ви можете встановити або зберегти додаткові значення в контексті
+
+         // Приклад: Зберегти попередні дані перед виконанням мутації
+         //return { prevData: /* попередні дані */, ...variables };
          return {context: 'onMutateContext'}
       },
       onSuccess: (data, variables, context) => {

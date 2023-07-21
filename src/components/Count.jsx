@@ -2,6 +2,8 @@ import {shallow} from 'zustand/shallow';
 import {useGetStore} from '@/hooks';
 import {useCounter} from '@/store';
 
+// https://youtu.be/E0fp2KUWRtQ?list=PLghXKtwd8hBUWmvfi3JeN7gGvgWFu8t7q
+
 const Count = () => {
    //TODO щоб записувати/читати дані в sessionStorage,localStorage і не було помилки при запису/читані даних,
    // використовуєм useEffect - щоб компонента відображалася на сервері (даже коли в неї 'use client')

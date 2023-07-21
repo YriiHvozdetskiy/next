@@ -1,14 +1,17 @@
 'use client'
 
-import cat from '@/assets/images/cat.png';
+import {useState} from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import cat from '@/assets/images/cat.png';
 import {SubscribeButton} from '@/components/SubscribeButton';
 import {Button, buttonVariants} from '@/components/Button';
-import Link from 'next/link';
 import {Column} from '@/components/Column';
 import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
 import {Modal} from '@/components/Modal';
+import {useFetchTodos} from '@/hooks/queries';
 
 // const Count = dynamic(
 //    () => import('../components/Count'),
@@ -18,6 +21,10 @@ import {Modal} from '@/components/Modal';
 // )
 
 export default function HomePage() {
+   const [filterCompleted, setFilterCompleted] = useState(false);
+
+   // повертається useQuery з всіма методами і тд
+   const todos = useFetchTodos({filter: filterCompleted})
 
    return (
       <>
