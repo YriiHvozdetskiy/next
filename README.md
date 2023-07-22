@@ -6,6 +6,8 @@
 запит буде ОДИН всі наступні будуть братися з кешу тому використовувати zustand/redux немає необхідності див.TestUseQuery | const {data} = useQuery(['MyPosts']) 
 але queryKey повинен бути однаковий ["MyPosts", null] , ["MyPosts"] - це різні
 
+- є головний layout на app рівні, всі решта(layout інших сторінок) вложені в нього
+
 # react-query
 1. створюєм свої кастомні хуки (див hooks/queries)
 2. для актуалізації даних після "мутації" викор - queryClient.invalidateQueries(['keyName']) в ф-ції: onSuccess / onSettled
@@ -25,3 +27,4 @@
 `partialize` - якщо не хочемо записувати якесь поле в localStore див.useCounter
 порядок при деструктуризації ВАЖЛИВИЙ:  const [increaseCount, decreaseCount, count] = useCounter(state => [state.increaseCount, state.decreaseCount, state.count]
 `clearStorage` - назваСтора.persist.clearStorage() див.MyPosts
+не робем ДЕСТРУКТИРІЗАЦІЮ -  const {todos} = useTodos() Тому що якщо змінем якусь назву в хуку буде ререндер кругом де визивається цей хук
