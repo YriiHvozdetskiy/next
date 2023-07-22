@@ -1,6 +1,7 @@
+import {useRef, useState} from 'react';
+
 import {Task} from '@/components/Task';
 import {useStore} from '@/zustand/store';
-import {useRef, useState} from 'react';
 import {shallow} from 'zustand/shallow';
 
 export const Column = ({state}) => {
@@ -16,7 +17,7 @@ export const Column = ({state}) => {
 
    // or
    // const [tasks, addTask] = useStore(
-   //    (store) => [store.tasks.filter(task => task.state === state), store.addTask],
+   //    (stores) => [stores.tasks.filter(task => task.state === state), stores.addTask],
    //    shallow
    // )
 

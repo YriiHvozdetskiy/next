@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 import PostsList1 from '@/components/PostList1';
 import {RqPost} from '@/components/RqPost';
 import {CreatePost} from '@/components/CreatePost';
 
-export default function RQPostsPage() {
+const RQPostsPage = () => {
 
    return (
       <>
@@ -14,3 +14,4 @@ export default function RQPostsPage() {
       </>
    )
 }
+export default RQPostsPage;

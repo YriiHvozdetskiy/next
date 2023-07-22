@@ -1,7 +1,7 @@
 import {Calendar} from '@/components/ui/Calendar';
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui/Accordion';
 
-export default function ShadcnUiPage() {
+const ShadcnUiPage = () => {
 
    return (
       <div>
@@ -23,3 +23,4 @@ export default function ShadcnUiPage() {
       </div>
    )
 }
+export default ShadcnUiPage;

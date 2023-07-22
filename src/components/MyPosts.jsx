@@ -3,7 +3,7 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
 import axios from 'axios';
 
-import {usePosts} from '@/store';
+import {usePosts} from '@/stores';
 import Card from '@/components/Card';
 import {wait} from '@/utils';
 import {getMyPosts} from '@/fetch';

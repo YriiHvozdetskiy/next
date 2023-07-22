@@ -1,7 +1,7 @@
 import {MyPosts} from '@/components/MyPosts';
 import {TestUseQuery} from '@/components/TestUseQuery';
 
-export default function MyPostsPage() {
+const MyPostsPage = () => {
 
    return (
       <>
@@ -10,3 +10,4 @@ export default function MyPostsPage() {
       </>
    )
 }
+export default MyPostsPage;

@@ -15,4 +15,8 @@ export const navLinks = [
       href: '/rq-posts',
       name: 'RQ-posts'
    },
+   {
+      href: '/zustand',
+      name: 'zustand'
+   },
 ]

@@ -20,7 +20,7 @@ import {useFetchTodos} from '@/hooks/queries';
 //    { ssr: false }
 // )
 
-export default function HomePage() {
+const HomePage = () => {
    const [filterCompleted, setFilterCompleted] = useState(false);
 
    // повертається useQuery з всіма методами і тд
@@ -342,3 +342,5 @@ export default function HomePage() {
       </>
    );
 }
+
+export default HomePage;

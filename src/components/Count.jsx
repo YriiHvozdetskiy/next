@@ -1,6 +1,7 @@
 import {shallow} from 'zustand/shallow';
+
 import {useGetStore} from '@/hooks';
-import {useCounter} from '@/store';
+import {useCounter} from '@/stores';
 import {useEffect} from 'react';
 
 // https://youtu.be/E0fp2KUWRtQ?list=PLghXKtwd8hBUWmvfi3JeN7gGvgWFu8t7q
