@@ -7,12 +7,19 @@ import {usePosts} from '@/store';
 import Card from '@/components/Card';
 import {wait} from '@/utils';
 import {getMyPosts} from '@/fetch';
+import {useGetStore} from '@/hooks';
+import {Button} from '@/components/Button';
 
 export const MyPosts = () => {
    const queryClient = useQueryClient()
-   const {setIsLoading} = usePosts()
+   const [setIsLoading, pushPost] = usePosts(state => [
+      state.setIsLoading,
+      state.pushPost
+   ])
 
-   // const {} = usePost(1,'post')
+   const posts = useGetStore(usePosts, state => state.posts)
+   console.log('posts', posts)
+
    //TODO з useQuery можна не використовувати useEffect для запиту при монтувані і useState для запису даних в стейт, дані будуть в "data" і кожний раз актуальні(коли з вкаладки пропаде фокус і тд)
    const {data} = useQuery({
       queryKey: ['MyPosts'], // якщо ми будем використовувати useQuery ще десь НА ТІЙ САМІЙ СТОРІНЦІ будем робити fetch, то за цим ключом ['MyPosts'], useQuery візьме дані з кешу і не буде робити ще один fetch
@@ -34,6 +41,8 @@ export const MyPosts = () => {
       //    return data
       // },
       onSuccess: (data) => {
+         // записуєм дані в zustand (не потрібно див замітки в README)
+         pushPost(data)
       },
       onError: () => {
       },
@@ -63,6 +72,9 @@ export const MyPosts = () => {
 
    return (
       <div>
+         <Button onClick={() => usePosts.persist.clearStorage()}>
+            clear localStore
+         </Button>
          {data && data?.map(post => (
             <div key={post.title}>
                <span>title: {post?.title}</span>

@@ -5,7 +5,8 @@ export const usePosts = create(
    persist(set => ({
          posts: [],
          isLoading: false,
-         setIsLoading: (isLoading) => set({isLoading})
+         setIsLoading: (isLoading) => set({isLoading}),
+         pushPost: (posts) => set({posts: posts})
       }),
       {
          name: 'posts',

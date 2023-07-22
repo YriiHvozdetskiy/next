@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
 import {useStore} from '@/zustand/store';
 
+// https://youtu.be/fZPgBnL2x-Q?list=PLghXKtwd8hBUWmvfi3JeN7gGvgWFu8t7q
+
 export const Task = ({title}) => {
    const [color, setColor] = useState('gray');
    const task = useStore(store => store.tasks.find(task => task.title === title))
