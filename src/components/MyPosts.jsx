@@ -9,6 +9,7 @@ import {wait} from '@/utils';
 import {getMyPosts} from '@/fetch';
 import {useGetStore} from '@/hooks';
 import {Button} from '@/components/Button';
+import {getPosts} from '@/hooks/queries';
 
 export const MyPosts = () => {
    const queryClient = useQueryClient()
@@ -18,7 +19,7 @@ export const MyPosts = () => {
    ])
 
    const posts = useGetStore(usePosts, state => state.posts)
-   console.log('posts', posts)
+   console.log('posts MyPosts', posts)
 
    //TODO з useQuery можна не використовувати useEffect для запиту при монтувані і useState для запису даних в стейт, дані будуть в "data" і кожний раз актуальні(коли з вкаладки пропаде фокус і тд)
    const {data} = useQuery({
