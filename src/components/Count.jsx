@@ -27,6 +27,7 @@ const Count = () => {
          state.increaseCount,
          state.decreaseCount,
       ],
+      //TODO без shallow буде перерендер всіх компонентів де визивається хук zustand
       shallow
    )
    // вся логіка useEffect в useGetStore -- це щоб не було помилки при запису в localStore (hydration-error)

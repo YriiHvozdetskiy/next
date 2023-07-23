@@ -3,6 +3,7 @@
 import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from 'react-hook-form';
+import {shallow} from 'zustand/shallow';
 
 import {useTodosStore} from '@/stores';
 import {Modal} from '@/components/Modal';
@@ -23,7 +24,7 @@ const formSchema = z.object({
    todo: z.string().min(2).max(50),
 })
 export const ZustandNewTodo = () => {
-   const [addTodo] = useTodosStore(state => [state.addTodo]);
+   const [addTodo] = useTodosStore(state => [state.addTodo], shallow);  //TODO без shallow буде перерендер всіх компонентів де визивається хук zustand
    const [isOpen, onClose, onOpen] = useModalStore(state => [state.isOpen, state.onClose, state.onOpen])
 
    const form = useForm({
@@ -42,6 +43,8 @@ export const ZustandNewTodo = () => {
       console.log('values', values)
       console.log('e', e)
    };
+
+   console.log('render ZustandNewTodo')
 
    return (
       <>

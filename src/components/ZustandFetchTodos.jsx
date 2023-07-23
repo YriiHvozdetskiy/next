@@ -11,9 +11,10 @@ export const ZustandFetchTodos = () => {
          state.error,
          state.fetchTodos,
       ],
+      //TODO без shallow буде перерендер всіх компонентів де визивається хук zustand
       shallow
    );
-   console.log('render FetchTodos');
+   console.log('render ZustandFetchTodos');
 
    return (
       <Button isLoading={loading} onClick={fetchTodos} className={'mt-5'}>
