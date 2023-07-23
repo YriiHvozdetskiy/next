@@ -7,8 +7,6 @@ import Link from 'next/link';
 import cat from '@/assets/images/cat.png';
 import {SubscribeButton} from '@/components/SubscribeButton';
 import {Button, buttonVariants} from '@/components/Button';
-import {Column} from '@/components/Column';
-import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
 import {Modal} from '@/components/Modal';
 import {useFetchTodos} from '@/hooks/queries';
@@ -30,11 +28,7 @@ const HomePage = () => {
 
    return (
       <>
-         <section className={'container flex justify-center space-x-3'}>
-            <Column state={'Planned'}/>
-            <Column state={'Ongoing'}/>
-            <Column state={'Done'}/>
-         </section>
+         <br/>
          <Modal
             title={'Are you sure absolutely?'}
             description={'This action cannot be undone. This will permanently delete your account and remove your data from our servers.'}
@@ -57,7 +51,7 @@ const HomePage = () => {
          >
             <p>content modal 2</p>
          </Modal>
-         <Count/>
+         <br/>
          {/*TODO можем використовувати стилі з компоненти Button, buttonVariants*/}
          <Link
             href={'/'}

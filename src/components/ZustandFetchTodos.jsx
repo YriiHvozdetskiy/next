@@ -18,7 +18,7 @@ export const ZustandFetchTodos = () => {
 
    console.log('render ZustandFetchTodos');
    return (
-      <Button isLoading={loading} onClick={fetchTodos} className={'mt-5'}>
+      <Button isLoading={loading} onClick={fetchTodos} className={'my-5'}>
          {!error ? 'Get todos' : {error}}
       </Button>
    );
