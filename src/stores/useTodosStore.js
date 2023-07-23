@@ -30,7 +30,10 @@ export const useTodosStore = create(
                const newTodo = {id: nanoid(), title, completed: false}
 
                // через get() отримуємо необхідні поля з стейту і повертаємо ОБЄКТ
-               set({todos: [...get().todos, newTodo]})
+               set({todos: [...get().todos, newTodo]},
+                  false,
+                  'addTodo' // даєм назву action в ReduxDevtools
+               )
             },
             toggleTodo: (todoId) => set({
                todos: get().todos.map(
@@ -42,7 +45,10 @@ export const useTodosStore = create(
             // асинхроність
             fetchTodos: async () => {
                // починаєм показувати лоадер
-               set({loading: true})
+               set({loading: true},
+                  false,
+                  'fetchTodos' // даєм назву action в ReduxDevtools
+               )
 
                try {
                   const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10').then(res => res.json())
@@ -68,6 +74,9 @@ export const useTodosStore = create(
          {
             name: 'todos'
          }
-      )
+      ),
+      {
+         name: 'TodoStore' // даєм назву store в ReduxDevtools
+      }
    )
 )
