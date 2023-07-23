@@ -35,6 +35,8 @@ export const ZustandTodoList = () => {
    //    return null;
    // }
 
+   console.log('render ZustandTodoList')
+
    return (
       <>
          {todos?.map((todo) => (

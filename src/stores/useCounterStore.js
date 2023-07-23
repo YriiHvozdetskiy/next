@@ -1,6 +1,7 @@
 import {create} from 'zustand';
 import {createJSONStorage, persist} from 'zustand/middleware';
 
+// TODO є баг коли буде швидко нажимати лічильник не вірно перемикається(нажали більше чим показує)
 export const useCounterStore = create(
    persist((set) => ({
          count: 0,
