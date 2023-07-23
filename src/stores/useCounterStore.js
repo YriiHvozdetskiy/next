@@ -1,7 +1,7 @@
 import {create} from 'zustand';
 import {createJSONStorage, persist} from 'zustand/middleware';
 
-export const useCounter = create(
+export const useCounterStore = create(
    persist((set) => ({
          count: 0,
          size:'big', //це для прикладу якщо не хочемо записувати в localStore

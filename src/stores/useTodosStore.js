@@ -4,7 +4,7 @@ import {persist, devtools} from 'zustand/middleware'
 
 // https://youtu.be/l6WDSN-_HSI
 
-export const useTodos = create(
+export const useTodosStore = create(
    devtools(
       persist(
          (set, get) => ({

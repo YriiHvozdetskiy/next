@@ -1,7 +1,7 @@
 import {shallow} from 'zustand/shallow';
 
 import {useGetStore} from '@/hooks';
-import {useCounter} from '@/stores';
+import {useCounterStore} from '@/stores';
 import {useEffect} from 'react';
 
 // https://youtu.be/E0fp2KUWRtQ?list=PLghXKtwd8hBUWmvfi3JeN7gGvgWFu8t7q
@@ -12,7 +12,7 @@ const Count = () => {
 
    // const [countState, setCountState] = useState();
    //!! порядок тут [count, increaseCount] має відповідати цюму: state.count, state.increaseCount,
-   // const [count, increaseCount] = useCounter(
+   // const [count, increaseCount] = useCounterStore(
    //    state => [state.count, state.increaseCount],
    //    shallow
    // )
@@ -23,15 +23,15 @@ const Count = () => {
 
    //or
    //!! порядок тут [increaseCount, decreaseCount] має відповідати цюму: state.increaseCount, state.decreaseCount
-   const [increaseCount, decreaseCount] = useCounter(state => [
+   const [increaseCount, decreaseCount] = useCounterStore(state => [
          state.increaseCount,
          state.decreaseCount,
       ],
       shallow
    )
    // вся логіка useEffect в useGetStore -- це щоб не було помилки при запису в localStore (hydration-error)
-   // тут ми повертаємо тільки стейт(значення), методи для роботи з стейтом отримкєм див вище з useCounter
-   const count = useGetStore(useCounter, state => state.count)
+   // тут ми повертаємо тільки стейт(значення), методи для роботи з стейтом отримкєм див вище з useCounterStore
+   const count = useGetStore(useCounterStore, state => state.count)
 
    return (
       <div className={'flex flex-col items-center space-y-4'}>

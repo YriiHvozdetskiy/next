@@ -15,6 +15,8 @@
 - `форма з валідацією` в ZustandNewTodo
 
 # react-query
+- назва хука для запитів за допомогою react-query: [useНазваЩоЦе + Query] дод стово Query н-д: usePostsQuery
+
 1. створюєм свої кастомні хуки (див hooks/queries)
 2. для актуалізації даних після "мутації" викор - queryClient.invalidateQueries(['keyName']) в ф-ції: onSuccess / onSettled
 
@@ -27,10 +29,12 @@
 
 # zustand
 
+- назва хука для стора: [useНазваЩоЦе + Store] дод стово Store н-д: useModalStore
+
 `shallow` -  використовує лише поверхневе (поверхневе) порівняння при перевірці змін стану. порівнюватиме тільки посилання на об'єкти та масиви, а не їхні внутрішні значення
 в компоненті `Count` записуєм count в `localStore` там використовуєм кастомний хук `useGetStore` який фіксить помилку з `hydration`
-`sessionStorage` - якщо потрібно щось записати використовуєм `createJSONStorage` див.useCounter
-`partialize` - якщо не хочемо записувати якесь поле в localStore див.useCounter
-порядок при деструктуризації ВАЖЛИВИЙ:  const [increaseCount, decreaseCount, count] = useCounter(state => [state.increaseCount, state.decreaseCount, state.count]
+`sessionStorage` - якщо потрібно щось записати використовуєм `createJSONStorage` див.useCounterStore
+`partialize` - якщо не хочемо записувати якесь поле в localStore див.useCounterStore
+порядок при деструктуризації ВАЖЛИВИЙ:  const [increaseCount, decreaseCount, count] = useCounterStore(state => [state.increaseCount, state.decreaseCount, state.count]
 `clearStorage` - назваСтора.persist.clearStorage() див.MyPosts
-не робем ДЕСТРУКТИРІЗАЦІЮ -  const {todos} = useTodos() Тому що якщо змінем якусь назву в хуку буде ререндер кругом де визивається цей хук
+не робем ДЕСТРУКТИРІЗАЦІЮ -  const {todos} = useTodosStore() Тому що якщо змінем якусь назву в хуку буде ререндер кругом де визивається цей хук

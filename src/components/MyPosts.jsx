@@ -3,7 +3,7 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
 import axios from 'axios';
 
-import {usePosts} from '@/stores';
+import {usePostsStore} from '@/stores';
 import Card from '@/components/Card';
 import {wait} from '@/utils';
 import {getMyPosts} from '@/fetch';
@@ -13,12 +13,12 @@ import {getPosts} from '@/hooks/queries';
 
 export const MyPosts = () => {
    const queryClient = useQueryClient()
-   const [setIsLoading, pushPost] = usePosts(state => [
+   const [setIsLoading, pushPost] = usePostsStore(state => [
       state.setIsLoading,
       state.pushPost
    ])
 
-   const posts = useGetStore(usePosts, state => state.posts)
+   const posts = useGetStore(usePostsStore, state => state.posts)
    console.log('posts MyPosts', posts)
 
    //TODO з useQuery можна не використовувати useEffect для запиту при монтувані і useState для запису даних в стейт, дані будуть в "data" і кожний раз актуальні(коли з вкаладки пропаде фокус і тд)
@@ -73,7 +73,7 @@ export const MyPosts = () => {
 
    return (
       <div>
-         <Button onClick={() => usePosts.persist.clearStorage()}>
+         <Button onClick={() => usePostsStore.persist.clearStorage()}>
             clear localStore
          </Button>
          {data && data?.map(post => (

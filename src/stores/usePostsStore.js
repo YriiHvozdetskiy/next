@@ -1,7 +1,7 @@
 import {create} from 'zustand';
 import {persist} from 'zustand/middleware';
 
-export const usePosts = create(
+export const usePostsStore = create(
    persist(set => ({
          posts: [],
          isLoading: false,

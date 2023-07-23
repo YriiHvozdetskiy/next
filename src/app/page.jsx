@@ -12,7 +12,7 @@ import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
 import {Modal} from '@/components/Modal';
 import {useFetchTodos} from '@/hooks/queries';
-import {useStoreModal} from '@/stores/useStoreModal';
+import {useModalStore} from '@/stores/useModalStore';
 
 // const Count = dynamic(
 //    () => import('../components/Count'),
@@ -23,7 +23,7 @@ import {useStoreModal} from '@/stores/useStoreModal';
 
 const HomePage = () => {
    const [filterCompleted, setFilterCompleted] = useState(false);
-   const [isOpen, onClose, onOpen] = useStoreModal(state => [state.isOpen, state.onClose, state.onOpen])
+   const [isOpen, onClose, onOpen] = useModalStore(state => [state.isOpen, state.onClose, state.onOpen])
 
    // повертається useQuery з всіма методами і тд
    const todos = useFetchTodos({filter: filterCompleted})

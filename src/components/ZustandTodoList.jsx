@@ -2,12 +2,12 @@
 
 import {useEffect, useState} from 'react';
 
-import {useFilter, useTodos} from '@/stores';
+import {useFilterStore, useTodosStore} from '@/stores';
 import {Checkbox} from '@/components/ui/Checkbox';
 import {useGetStore} from '@/hooks';
 
 const Todo = ({id, title}) => {
-   const [toggleTodo] = useTodos(state => [state.toggleTodo]);
+   const [toggleTodo] = useTodosStore(state => [state.toggleTodo]);
 
    return (
       <div className={'flex items-center space-x-2'}>
@@ -18,8 +18,8 @@ const Todo = ({id, title}) => {
 };
 
 export const ZustandTodoList = () => {
-   const [filter] = useFilter(state => [state.filter]);
-   const todos = useTodos(state => {
+   const [filter] = useFilterStore(state => [state.filter]);
+   const todos = useTodosStore(state => {
 
       switch (filter) {
          case 'completed':
@@ -41,7 +41,7 @@ export const ZustandTodoList = () => {
       return null;
    }
 
-   // const todos = useGetStore(useTodos, state => state.todos)
+   // const todos = useGetStore(useTodosStore, state => state.todos)
 
    return (
       <>

@@ -4,7 +4,7 @@ import * as z from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from 'react-hook-form';
 
-import {useTodos} from '@/stores';
+import {useTodosStore} from '@/stores';
 import {Modal} from '@/components/Modal';
 import {
    Form,
@@ -16,15 +16,15 @@ import {
 } from '@/components/ui/Form';
 import {Button} from '@/components/ui/Button';
 import {Input} from '@/components/ui/Input';
-import {useStoreModal} from '@/stores/useStoreModal';
+import {useModalStore} from '@/stores/useModalStore';
 
 
 const formSchema = z.object({
    todo: z.string().min(2).max(50),
 })
 export const ZustandNewTodo = () => {
-   const [addTodo] = useTodos(state => [state.addTodo]);
-   const [isOpen, onClose, onOpen] = useStoreModal(state => [state.isOpen, state.onClose, state.onOpen])
+   const [addTodo] = useTodosStore(state => [state.addTodo]);
+   const [isOpen, onClose, onOpen] = useModalStore(state => [state.isOpen, state.onClose, state.onOpen])
 
    const form = useForm({
       resolver: zodResolver(formSchema),
@@ -33,13 +33,14 @@ export const ZustandNewTodo = () => {
       },
    })
 
-   const onSubmit = (values,e) => {
+   const onSubmit = (values, e) => {
       addTodo(values.todo);
       onClose()
       form.reset()
 
-      console.log('values',values)
-      console.log('e',e)
+      console.log('form', form)
+      console.log('values', values)
+      console.log('e', e)
    };
 
    return (
