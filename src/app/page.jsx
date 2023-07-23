@@ -12,6 +12,7 @@ import Count from '@/components/Count';
 import dynamic from 'next/dynamic';
 import {Modal} from '@/components/Modal';
 import {useFetchTodos} from '@/hooks/queries';
+import {useStoreModal} from '@/stores/useStoreModal';
 
 // const Count = dynamic(
 //    () => import('../components/Count'),
@@ -22,6 +23,7 @@ import {useFetchTodos} from '@/hooks/queries';
 
 const HomePage = () => {
    const [filterCompleted, setFilterCompleted] = useState(false);
+   const [isOpen, onClose, onOpen] = useStoreModal(state => [state.isOpen, state.onClose, state.onOpen])
 
    // повертається useQuery з всіма методами і тд
    const todos = useFetchTodos({filter: filterCompleted})
@@ -36,7 +38,10 @@ const HomePage = () => {
          <Modal
             title={'Are you sure absolutely?'}
             description={'This action cannot be undone. This will permanently delete your account and remove your data from our servers.'}
-            trigger={'Open modal 1'}
+            triggerName={'Open modal 1'}
+            isOpen={isOpen}
+            onClose={onClose}
+            onOpen={onOpen}
          >
             <p>content modal 1</p>
          </Modal>
@@ -45,7 +50,10 @@ const HomePage = () => {
             className={'bg-zinc-900 text-zinc-100 hover:bg-zinc-800 mt-2'}
             title={'Are you absolutely?'}
             description={'This action cannot be undone. This will permanently delete your account and remove your data from our servers.'}
-            trigger={'Open modal 2'}
+            triggerName={'Open modal 2'}
+            isOpen={isOpen}
+            onClose={onClose}
+            onOpen={onOpen}
          >
             <p>content modal 2</p>
          </Modal>

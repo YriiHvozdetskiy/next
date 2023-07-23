@@ -8,6 +8,12 @@
 
 - є головний layout на app рівні, всі решта(layout інших сторінок) вложені в нього
 
+- альтернатива useGetStore див.ZustandTodoList
+
+- для `модалки` зробили глобальний стейт за допомогою `zustand` 
+
+- `форма з валідацією` в ZustandNewTodo
+
 # react-query
 1. створюєм свої кастомні хуки (див hooks/queries)
 2. для актуалізації даних після "мутації" викор - queryClient.invalidateQueries(['keyName']) в ф-ції: onSuccess / onSettled

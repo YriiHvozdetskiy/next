@@ -1,3 +1,5 @@
+import {twMerge} from 'tailwind-merge';
+
 import {
    Dialog,
    DialogContent,
@@ -6,21 +8,33 @@ import {
    DialogTitle,
    DialogTrigger
 } from '@/components/ui/Dialog';
-import {twMerge} from 'tailwind-merge';
+
 
 export const Modal = (
    {
       title,
       description,
       children,
-      trigger,
+      triggerName,
       className,
+      onClose,
+      onOpen,
+      isOpen,
    }) => {
 
+   const onChange = (open) => {
+      if (!open) {
+         onClose();
+      }
+   };
+
    return (
-      <Dialog>
-         <DialogTrigger className={twMerge('py-1 px-6 rounded-md bg-violet-600 text-black', className)}>
-            {trigger}
+      <Dialog open={isOpen} onOpenChange={onChange}>
+         <DialogTrigger
+            className={twMerge('py-1 px-6 rounded-md bg-violet-600 text-black', className)}
+            onClick={ onOpen}
+         >
+            {triggerName}
          </DialogTrigger>
          <DialogContent>
             <DialogHeader>
