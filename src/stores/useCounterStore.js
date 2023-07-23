@@ -9,6 +9,7 @@ export const useCounterStore = create(
          decreaseCount: (value) => set((state) => ({count: state.count - value}))
       }),
       {
+         // назва ключа в localStore
          name: 'counter',
          // storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
 

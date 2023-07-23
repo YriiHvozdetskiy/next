@@ -1,6 +1,7 @@
 import {nanoid} from 'nanoid';
 import {create} from 'zustand';
 import {persist, devtools} from 'zustand/middleware'
+import {wait} from '@/utils';
 
 // https://youtu.be/l6WDSN-_HSI
 
@@ -23,9 +24,12 @@ export const useTodosStore = create(
              })
             addTodo: (title) => set(state => ({ todos: [...state.todos, { id: nanoid(), title, completed: false }] }))
              */
+
+            // третій підхід - використовуєм ф-цію get()
             addTodo: (title) => {
                const newTodo = {id: nanoid(), title, completed: false}
 
+               // через get() отримуємо необхідні поля з стейту і повертаємо ОБЄКТ
                set({todos: [...get().todos, newTodo]})
             },
             toggleTodo: (todoId) => set({
@@ -35,22 +39,32 @@ export const useTodosStore = create(
                      : todo
                )
             }),
+            // асинхроність
             fetchTodos: async () => {
+               // починаєм показувати лоадер
                set({loading: true})
 
                try {
-                  const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
+                  const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10').then(res => res.json())
 
-                  if (!res.ok) throw new Error('Failed to fetch! Try again.')
+                  await wait(2000)
 
-                  set({todos: await res.json(), error: null})
+                  // if (!response.ok) throw new Error('Failed to fetch! Try again.')
+
+                  // перезаписуєм значення
+                  set({todos: response, error: null})
+
+                  // зберігаєм сторі і дод нові
+                  // set({todos: [...get().todos, ...response], error: null})
                } catch (error) {
                   set({error: error.message})
                } finally {
+                  // ховаєм лоадер
                   set({loading: false})
                }
             }
          }),
+         // назва ключа в localStore
          {
             name: 'todos'
          }

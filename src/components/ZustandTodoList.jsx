@@ -11,7 +11,10 @@ const Todo = ({id, title}) => {
 
    return (
       <div className={'flex items-center space-x-2'}>
-         <Checkbox id={id} onChange={() => toggleTodo(id)}/>
+         <Checkbox
+            id={id}
+            onChange={() => toggleTodo(id)}
+         />
          <label htmlFor={id}>{title}</label>
       </div>
    );

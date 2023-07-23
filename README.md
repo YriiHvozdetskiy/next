@@ -30,6 +30,7 @@
 # zustand
 
 - назва хука для стора: [useНазваЩоЦе + Store] дод стово Store н-д: useModalStore
+- опис стора в `useTodosStore, useCounterStore`
 
 `shallow` -  використовує лише поверхневе (поверхневе) порівняння при перевірці змін стану. порівнюватиме тільки посилання на об'єкти та масиви, а не їхні внутрішні значення
 в компоненті `Count` записуєм count в `localStore` там використовуєм кастомний хук `useGetStore` який фіксить помилку з `hydration`
@@ -38,3 +39,4 @@
 порядок при деструктуризації ВАЖЛИВИЙ:  const [increaseCount, decreaseCount, count] = useCounterStore(state => [state.increaseCount, state.decreaseCount, state.count]
 `clearStorage` - назваСтора.persist.clearStorage() див.MyPosts
 не робем ДЕСТРУКТИРІЗАЦІЮ -  const {todos} = useTodosStore() Тому що якщо змінем якусь назву в хуку буде ререндер кругом де визивається цей хук
+`set()` - ф-ція set має повертати обєкт
