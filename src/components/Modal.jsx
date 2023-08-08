@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/Dialog';
 
 
-export const Modal = (
+export const  Modal = (
    {
       title,
       description,

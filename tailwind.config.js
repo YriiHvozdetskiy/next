@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const {cn} = require('@/lib/utils');
+const {Header} = require('@/components/Header');
 module.exports = {
    darkMode: ["class"],
    content: [
@@ -120,15 +122,56 @@ module.exports = {
    plugins: [require("tailwindcss-animate")],
 }
 
+//TODO Background Image
+//bg-[url('https://cdn.pixabay.com/photo/2023/06/23/19/34/campfire-8084064_1280.jpg')]
+
+//TODO custom bg
+
+// tailwind.config.js
+// backgroundImage: {
+//    'auth': "url('../assets/images/auth-bg.jpg')",
+// },
+// bg-auth
+
+//TODO  background: rgba(1, 1, 1, 0.40); == bg-[#010101] bg-opacity-40
+
+// TODO тернарник
+// className={`${isChecked ? 'bg-primary' : 'bg-light'} w-[2.5rem] h-[2.5rem]`}
+
+//TODO grid-rows кастомні
+//https://tailwindcss.com/docs/grid-template-rows#arbitrary-values
+// grid-rows-[200px_minmax(900px,_1fr)_100px]
+//grid-rows-[22rem_22rem] - буде два рядки, можна робити довільну к-ть за допомогою "_" див.доку
+// .collage-rows {
+//    grid-template-rows: repeat(6, 22rem);
+// }
+
+
+// grid-template-rows: repeat(6, 22rem); - перші будуть висотою 22rem
+// auto-rows-[22rem] = grid-auto-rows: 22rem; починаючи з 7 рядка будуть по 22rem і до безкінечності
+
+// TODO cn() - тепер можем міняти стилі
+// при визові
+// <Header
+//    className={'bg-violet-200'} // додаткова стилізація через className (потірбно додати ф-цію 'cn')
+// />
+// в компоненті є стандартні стилі і яерез className передажєм додаткові
+// <header className={cn('container mb-8 py-2', className)}>
+
+// TODO data-state="active"
+//data-[state="active"]:text-accent - стилізація дата атрибутів
+
 // TODO custom values
 //top-[-23px]
 //w-[50%]
+
+//TODO [&[data-state=open]>svg]:rotate-180
 
 // TODO calc
 //w-[calc(100%/2)] - писати без пробілів
 
 // TODO not(:last-child)
-//[&>*:not(:last-child)]:властивість - ЗАДАЄТЬСЯ БАТЬКУ
+//[&>*:not(:last-child)]:властивість - //TODO ЗАДАЄТЬСЯ БАТЬКУ
 
 //TODO :not(тег)
 //[&>*:not(p)]:властивість - ЗАДАЄТЬСЯ БАТЬКУ для ТЕГІВ
@@ -138,6 +181,9 @@ module.exports = {
 
 //TODO max-* sm, md, lg etc - стилі будуть примінятися ДО відповідного @media
 //@media screen and (max-width)
+// max-xl:bg-gray-300 max-w-[1430px]
+
+// min-[320px]:text-center
 
 
 // sm	640px	@media (min-width: 640px)

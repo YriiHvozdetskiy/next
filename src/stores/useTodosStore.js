@@ -6,6 +6,7 @@ import {wait} from '@/utils';
 // https://youtu.be/l6WDSN-_HSI
 
 export const useTodosStore = create(
+   // TODO через devtools коли визиваєм хук властивості підсвічуються ніби їх нема
    devtools(
       persist(
          (set, get) => ({
