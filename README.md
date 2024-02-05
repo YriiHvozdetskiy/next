@@ -27,6 +27,7 @@
 `setQueryData` - оновлення кешу в ручну (див.CreatePost)
 `onMutate` - виконується перед мутацією, можем мітєво оновити дані на клієнті без затримки, (див.CreatePost)
 `enabled` використовується для керування активацією або вимиканням автоматичних запитів на сервер.
+`refetchOnWindowFocus` - вимикає повторні запити при втрані і повернені фокусу https://tanstack.com/query/v4/docs/react/guides/window-focus-refetching
 
 # zustand
 

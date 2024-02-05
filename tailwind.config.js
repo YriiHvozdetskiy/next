@@ -120,6 +120,9 @@ module.exports = {
    plugins: [require("tailwindcss-animate")],
 }
 
+//TODO прозорий border
+//border border-primary border-opacity-0
+
 //TODO Background Image
 //bg-[url('https://cdn.pixabay.com/photo/2023/06/23/19/34/campfire-8084064_1280.jpg')]
 
@@ -136,6 +139,9 @@ module.exports = {
 // TODO тернарник
 // className={`${isChecked ? 'bg-primary' : 'bg-light'} w-[2.5rem] h-[2.5rem]`}
 
+
+//TODO GRID
+
 //TODO grid-rows кастомні
 //https://tailwindcss.com/docs/grid-template-rows#arbitrary-values
 // grid-rows-[200px_minmax(900px,_1fr)_100px]
@@ -144,11 +150,17 @@ module.exports = {
 //    grid-template-rows: repeat(6, 22rem);
 // }
 
+//TODO grid-cols кастомні
+//grid-cols-1 md:grid-cols-[minmax(20rem,40rem)_minmax(40rem,_1fr)] - буде 2 колонки:
+// 1 колонка - minmax(20rem,40rem) - мінімальна ширина 20rem, максимальна 40rem
+// 2 колонка - minmax(40rem,_1fr) - мінімальна ширина 40rem, максимальна 1fr
 
 // grid-template-rows: repeat(6, 22rem); - перші будуть висотою 22rem
 // auto-rows-[22rem] = grid-auto-rows: 22rem; починаючи з 7 рядка будуть по 22rem і до безкінечності
 
 // TODO cn() - тепер можем міняти стилі
+// тернарник в кінці ф-ції ${formProps?.errors?.[name] ? 'focus-visible:bg-[#FEF6F5] focus-visible:border-error' : ''}
+
 // при визові
 // <Header
 //    className={'bg-violet-200'} // додаткова стилізація через className (потірбно додати ф-цію 'cn')
@@ -168,7 +180,7 @@ module.exports = {
 // TODO calc
 //w-[calc(100%/2)] - писати без пробілів
 
-// TODO not(:last-child)
+// TODO not(:last-child) [&]
 //[&>*:not(:last-child)]:властивість - //TODO ЗАДАЄТЬСЯ БАТЬКУ
 
 //TODO :not(тег)

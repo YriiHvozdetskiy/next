@@ -313,6 +313,7 @@ const HomePage = () => {
             ></div>
             {/*TODO якщо так писати то в тулзах класи будуть з ... (не буде видно всіх класів/свойств в Firefox) в chrome все буде ок*/}
             <div
+               // style={{backgroundImage: `url(${background})`}}
                className={`
                      bg-[url('../assets/images/cat.png')]
                      bg-no-repeat

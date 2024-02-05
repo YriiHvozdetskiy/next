@@ -1,13 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-   reactStrictMode: true,
+   // reactStrictMode: true,
+   trailingSlash: true, // for refresh page
+   output: 'standalone',
+   experimental: {
+      appDir: true,
+   },
    images: {
       unoptimized: true,
-      // domains: [
-      //    'cdn.pixabay.com',
-      //    'media.istockphoto.com',
+      // formats: ['image/avif', 'image/webp'],
+      // unoptimized: false, //default false
+      // remotePatterns: [
+      //    {
+      //       protocol: 'https',
+      //       hostname: '**.sciepro.sheep.fish',
+      //       port: '',
+      //       pathname: '/storage/**',
+      //    },
       // ],
    },
+   // logging: {
+   //    fetches: {
+   //       fullUrl: true,
+   //    }
+   // },
 }
 
 module.exports = nextConfig
