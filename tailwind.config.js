@@ -183,6 +183,10 @@ module.exports = {
 // TODO not(:last-child) [&]
 //[&>*:not(:last-child)]:властивість - //TODO ЗАДАЄТЬСЯ БАТЬКУ
 
+//TODO last-child
+// [&_tr:last-child]:border-0
+// &>tr]:last:border-b-0
+
 //TODO :not(тег)
 //[&>*:not(p)]:властивість - ЗАДАЄТЬСЯ БАТЬКУ для ТЕГІВ
 
