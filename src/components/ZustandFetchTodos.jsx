@@ -6,15 +6,11 @@ import {useTodosStore} from '@/stores';
 import {Button} from '@/components/Button';
 
 export const ZustandFetchTodos = () => {
-   const [loading, error, fetchTodos] = useTodosStore(state => [
-         state.loading,
-         state.error,
-         state.fetchTodos,
-      ],
+   const [loading, error, fetchTodos] = useTodosStore(
+      (state) => [state.loading, state.error, state.fetchTodos],
       //TODO без shallow буде перерендер всіх компонентів де визивається хук zustand
-      shallow
+      shallow,
    );
-
 
    console.log('render ZustandFetchTodos');
    return (

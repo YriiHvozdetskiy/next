@@ -42,7 +42,10 @@
     ],
     "indent": [
       "error",
-      3, { "SwitchCase": 1 }
+      3,
+      {
+        "SwitchCase": 1
+      }
     ],
     "linebreak-style": [
       "error",
@@ -52,7 +55,13 @@
       "error",
       "always"
     ],
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     // Next.js doesn't require importing React in every file
     "react/jsx-props-no-spreading": "off",
