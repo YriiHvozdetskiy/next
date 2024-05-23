@@ -183,6 +183,11 @@ module.exports = {
 // TODO not(:last-child) [&]
 //[&>*:not(:last-child)]:властивість - //TODO ЗАДАЄТЬСЯ БАТЬКУ
 
+//TODO &:not(:last-child)
+// [&:not(:last-child)]:border
+
+// <li className={'[&:not(:last-child)]:border'}
+
 //TODO last-child
 // [&_tr:last-child]:border-0
 // &>tr]:last:border-b-0

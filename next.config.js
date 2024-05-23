@@ -7,6 +7,7 @@ const nextConfig = {
       appDir: true,
    },
    images: {
+      domains: ['cdn.pixabay.com', 'pixabay.com'],
       unoptimized: true,
       // formats: ['image/avif', 'image/webp'],
       // unoptimized: false, //default false
