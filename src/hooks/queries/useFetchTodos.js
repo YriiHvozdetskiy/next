@@ -1,9 +1,9 @@
 import {useQuery} from '@tanstack/react-query';
 
 const mockTodos = [
-   {id: 1, text: "Buy groceries", completed: false},
-   {id: 2, text: "Do laundry", completed: true},
-   {id: 3, text: "Walk the dog", completed: false}
+   {id: 1, text: 'Buy groceries', completed: false},
+   {id: 2, text: 'Do laundry', completed: true},
+   {id: 3, text: 'Walk the dog', completed: false},
 ];
 
 async function fetchTodos(filter, sortBy) {
@@ -17,7 +17,7 @@ async function fetchTodos(filter, sortBy) {
       filteredTodos = mockTodos.filter((todo) => !todo.completed);
    }
 
-// Apply sorting if provided
+   // Apply sorting if provided
    if (sortBy) {
       filteredTodos.sort((a, b) => {
          if (a[sortBy] < b[sortBy]) return -1;
@@ -31,18 +31,10 @@ async function fetchTodos(filter, sortBy) {
 
 export const useFetchTodos = ({filter, sortBy}) => {
    return useQuery(
-      [
-         "todos",
-         "list",
-         {
-            filter,
-            sortBy
-         }
-      ],
-      () => fetchTodos(filter, sortBy),
       {
+         queryKey: ['todos', 'list', {filter, sortBy}],
+         queryFn: () => fetchTodos(filter, sortBy),
          staleTime: 5000,
-         // ...options
       }
    );
-}
+};

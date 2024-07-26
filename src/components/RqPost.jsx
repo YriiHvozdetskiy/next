@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
 import {useQuery} from '@tanstack/react-query';
+
 import {getPost, getUser} from '@/fetch';
 
 export const RqPost = ({id}) => {
    const postQuery = useQuery({
       queryKey: ['posts', id],
-      queryFn: () => getPost(id)
-   })
-
+      queryFn: () => getPost(id),
+   });
 
    const userQuery = useQuery({
-      queryKey: ["users", postQuery?.data?.userId],
+      queryKey: ['users', postQuery?.data?.userId],
       enabled: postQuery?.data?.userId != null,
       queryFn: () => getUser(postQuery.data.userId),
-   })
+   });
 
    return (
       <>
@@ -22,9 +22,9 @@ export const RqPost = ({id}) => {
             {/*{postQuery?.data?.title} <br />*/}
             <small>
                {userQuery.isLoading
-                  ? "Loading User..."
+                  ? 'Loading User...'
                   : userQuery.isError
-                     ? "Error Loading User"
+                     ? 'Error Loading User'
                      : userQuery.data.name}
             </small>
          </h1>

@@ -3,9 +3,9 @@ const nextConfig = {
    // reactStrictMode: true,
    trailingSlash: true, // for refresh page
    output: 'standalone',
-   experimental: {
-      appDir: true,
-   },
+   // experimental: {
+   //    appDir: true,
+   // },
    images: {
       domains: ['cdn.pixabay.com', 'pixabay.com'],
       unoptimized: true,
