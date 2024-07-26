@@ -25,6 +25,6 @@ const nextConfig = {
    //       fullUrl: true,
    //    }
    // },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
