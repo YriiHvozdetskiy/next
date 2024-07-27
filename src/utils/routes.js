@@ -23,4 +23,8 @@ export const navLinks = [
       href: '/ssr-query',
       name: 'ssr-query',
    },
+   {
+      href: '/login',
+      name: 'Login',
+   },
 ];
