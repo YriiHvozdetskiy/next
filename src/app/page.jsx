@@ -83,7 +83,7 @@ const HomePage = () => {
          <SubscribeButton className={'text-white mb-3 uppercase'} />
          <SubscribeButton
             className={
-               'text-blue-800 uppercase bg-white border-solid border-cyan-400 border'
+               'text-blue-800 uppercase bg-white border-solid border-cyan-400 border custom-hover:hover:bg-blue-700 custom-hover:hover:text-white transition'
             }
          />
          {/*TODO twMerge можем передавати класи (головне щоб клас не був в @layer)*/}
